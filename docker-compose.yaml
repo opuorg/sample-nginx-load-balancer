@@ -2,19 +2,19 @@ version: "3.9"  # optional since v1.27.0
 services:
   web1:
     image: opuzaman21/sample-flask-app:latest
-    ports:
-      - "8091:8000"
+#    ports:
+#      - "8091:8000"
   web2:
     image: opuzaman21/sample-flask-app:latest
-    ports:
-      - "8092:8000"
+#    ports:
+#      - "8092:8000"
   web3:
     image: opuzaman21/sample-flask-app:latest
-    ports:
-      - "8093:8000"
+#    ports:
+#      - "8093:8000"
   load-balancer:
     image: nginx
     ports:
       - "8090:80"
     volumes:
-      - /Users/opuzaman/githome/docker-containers/nginx-servers/load-balancer/conf.d/:/etc/nginx/conf.d/
+      - /Users/opuzaman/githome/docker-containers/sample-nginx-load-balancer/load-balancer/conf.d/:/etc/nginx/conf.d
