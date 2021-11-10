@@ -1,17 +1,11 @@
 version: "3.9"  # optional since v1.27.0
 services:
   web1:
-    image: opuzaman21/sample-flask-app:latest
-#    ports:
-#      - "8091:8000"
+    image: opuzaman21/sample-flask-app:01
   web2:
-    image: opuzaman21/sample-flask-app:latest
-#    ports:
-#      - "8092:8000"
+    image: opuzaman21/sample-flask-app:01
   web3:
-    image: opuzaman21/sample-flask-app:latest
-#    ports:
-#      - "8093:8000"
+    image: opuzaman21/sample-flask-app:01
   load-balancer:
     image: nginx
     ports:
