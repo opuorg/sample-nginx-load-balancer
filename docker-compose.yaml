@@ -1,45 +1,20 @@
 version: "3.9"  # optional since v1.27.0
 services:
   web1:
-    image: nginx
+    image: opuzaman21/sample-flask-app:latest
     ports:
-      - "8091:80"
-    volumes:
-      - /Users/opuzaman/githome/docker-containers/nginx-servers/web1/nginx/:/usr/share/nginx/
-      - /Users/opuzaman/githome/docker-containers/nginx-servers/web1/conf.d/:/etc/nginx/conf.d/
+      - "8091:8000"
   web2:
-    image: nginx
+    image: opuzaman21/sample-flask-app:latest
     ports:
-      - "8092:80"
-    volumes:
-      - /Users/opuzaman/githome/docker-containers/nginx-servers/web2/nginx/:/usr/share/nginx/
-      - /Users/opuzaman/githome/docker-containers/nginx-servers/web2/conf.d/:/etc/nginx/conf.d/
+      - "8092:8000"
   web3:
-    image: nginx
+    image: opuzaman21/sample-flask-app:latest
     ports:
-      - "8093:80"
-    volumes:
-      - /Users/opuzaman/githome/docker-containers/nginx-servers/web3/nginx/:/usr/share/nginx/
-      - /Users/opuzaman/githome/docker-containers/nginx-servers/web3/conf.d/:/etc/nginx/conf.d/
+      - "8093:8000"
   load-balancer:
     image: nginx
     ports:
       - "8090:80"
     volumes:
       - /Users/opuzaman/githome/docker-containers/nginx-servers/load-balancer/conf.d/:/etc/nginx/conf.d/
-volumes:
-  conf:
-  web1:
-  web2:
-  web3:
-
-
-        #volumes:
-        #- .:/code
-        #- logvolume01:/var/log
-        #links:
-        #- redis
-        #redis:
-        #image: nginx
-      #volumes:
-      #logvolume01: {}
